@@ -50,8 +50,11 @@ GLACIE_AUTO_INSTANCE_HOOK(
     int   throwTime
 ) {
     auto itemActor = origin(region, itemStack, spawner, pos, throwTime);
-    // ItemActor::mLifeTime this+1108
-    glacie::memory::dAccess<int>(itemActor, 1108) = ItemDespawn::getInstance().getItemDespawnTime();
+    // ItemActor Pointer can be nullptr
+    if (itemActor) {
+        // ItemActor::mLifeTime this+1108
+        glacie::memory::dAccess<int>(itemActor, 1108) = ItemDespawn::getInstance().getItemDespawnTime();
+    }
     return itemActor;
 }
 
