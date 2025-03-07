@@ -12,15 +12,27 @@ public:
     };
 
 public:
-    static ItemDespawn& getInstance();
+    static ItemDespawn& getInstance() {
+        static auto instance = new ItemDespawn();
+        return *instance;
+    }
 
-    const endstone::PluginDescription& getDescription() const override;
+    const endstone::PluginDescription& getDescription() const override {
+        static auto description = mPluginInfo.build(mPluginInfo.name, mPluginInfo.version);
+        return description;
+    }
 
     void onLoad() override;
 
+    int getItemDespawnTime();
+
 private:
     PluginInfo mPluginInfo;
-    int        mItemDespawnTime;
+    int        mItemDespawnTime{6000};
 };
 
 } // namespace glacie_team
+
+extern "C" [[maybe_unused]] ENDSTONE_EXPORT endstone::Plugin* init_endstone_plugin() {
+    return &glacie_team::ItemDespawn::getInstance();
+}
