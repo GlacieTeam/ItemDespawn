@@ -8,17 +8,17 @@ add_repositories(
 add_requires(
     "endstone 0.6.1",
     "expected-lite 0.8.0",
-    "fmt 10.2.1"
-    -- "glaciehook 1.0.1",
-    -- "libhat 2024.9.22",
-    -- "detours v4.0.1-xmake.1"
+    "fmt 10.2.1",
+    "glaciehook 1.0.1",
+    "libhat 2024.9.22",
+    "detours v4.0.1-xmake.1"
 )
 
 if not has_config("vs_runtime") then
     set_runtimes("MD")
 end
 
-target("my-plugin")
+target("ItemDespawn")
     add_defines(
         "NOMINMAX", 
         "UNICODE", 
@@ -27,14 +27,14 @@ target("my-plugin")
     add_packages(
         "fmt",
         "expected-lite",
-        "endstone"
-        -- "glaciehook",
-        -- "libhat",
-        -- "detours"
+        "endstone",
+        "glaciehook",
+        "libhat",
+        "detours"
     )
     set_kind("shared")
     set_languages("cxx20")
-    set_symbols("debug")
+    -- set_symbols("debug")
     add_includedirs("src")
     add_files("src/**.cpp")
 
