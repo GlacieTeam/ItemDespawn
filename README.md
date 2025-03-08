@@ -1,5 +1,4 @@
 # ItemDespawn
-
 [![Discord](https://img.shields.io/discord/1346034987136192523?style=for-the-badge&logo=discord)](https://discord.gg/7uJNS3tNa6)
 
 [![Latest Tag](https://img.shields.io/github/v/tag/GlacieTeam/ItemDespawn?label=Latest%20Tag&style=for-the-badge)](https://github.com/GlacieTeam/ItemDespawn/releases)
@@ -8,6 +7,7 @@
 [![Issues](https://img.shields.io/github/issues/GlacieTeam/ItemDespawn.svg?style=for-the-badge)](https://github.com/GlacieTeam/ItemDespawn/issues)
 
 ## Description
+**`ItemDespawn` is an example endstone C++ plugin using [`GlacieHook`](https://github.com/GlacieTeam/GlacieHook) library.**
 - `ItemDespawn` is a server-side mod built on the Endstone mod loader that modify item despawn time.
 - This mod can make item despawn rapidly to void cause lags.
 - BDS for Windows only.
